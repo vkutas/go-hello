@@ -1,6 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	r := gin.Default()
@@ -8,6 +12,9 @@ func main() {
 	r.GET("/hello", func(c *gin.Context) {
 		c.String(200, "Hello, World!")
 	})
+	err := r.Run(":3000")
+	if err != nil {
+		fmt.Println(err)
+	}
 
-	r.Run(":3000")
 }
