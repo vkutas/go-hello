@@ -1,10 +1,8 @@
-name: Build Docker image, push to the registry and deploy applicaiton
+name: Run tests
 on:
   push:
-    branches:
-      - 'test_actionsw'
-    tags:
-      - '*-release'
+    branches-ignore:
+      - 'main'
 
 jobs:
   run_tests:
