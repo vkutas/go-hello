@@ -1,9 +1,10 @@
 name: Test sources, build container and Deploy Application
 on:
-  branches:
-     - 'add_deploy_action'
-  tags:
-    - '*-release'
+  push:
+    branches:
+       - 'add_deploy_action'
+    tags:
+      - '*-release'
 
 jobs:
   run_tests:
