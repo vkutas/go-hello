@@ -21,6 +21,6 @@ jobs:
         run: go get github.com/golangci/golangci-lint/cmd/golangci-lint@v1.26.0
       
       - name: Run Go linter
-        run: golangci-lint run hi-go/hello.go
+        run: cd hi-go && golangci-lint run hello.go
         
         
