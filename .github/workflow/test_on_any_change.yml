@@ -2,7 +2,7 @@ name: Build Docker image, push to the registry and deploy applicaiton
 on:
   push:
     branches:
-      - 'main'
+      - 'test_actionsw'
     tags:
       - '*-release'
 
