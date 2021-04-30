@@ -9,4 +9,5 @@ RUN adduser -S -D -H -h /app appuser
 USER appuser
 COPY --from=builder /build/hi-go /app/
 WORKDIR /app
+EXPOSE 3001
 CMD ["./hi-go"]
