@@ -1,4 +1,4 @@
-name: Build container and Deploy Application
+name: Run tests, build container with production release and send deploy webhook.
 on:
   push:
     tags:

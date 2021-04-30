@@ -1,4 +1,4 @@
-name: Build Docker image, push to the registry and deploy applicaiton
+name: Build Docker image of test or dev release and push it to the registry.
 on:
   push:
     tags:
