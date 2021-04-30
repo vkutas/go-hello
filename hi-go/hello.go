@@ -10,7 +10,7 @@ func main() {
 	r := gin.Default()
 
 	r.GET("/hello", func(c *gin.Context) {
-		c.String(200, "Hello, World!")
+		c.String(200, "Hello, Exam")
 	})
 	err := r.Run(":3001")
 	if err != nil {
