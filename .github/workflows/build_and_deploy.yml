@@ -1,4 +1,4 @@
-name: Test sources, build container and Deploy Application
+name: Build container and Deploy Application
 on:
   push:
     tags:
@@ -56,4 +56,4 @@ jobs:
         run: echo ::set-output name=TAG::${GITHUB_REF##*/}
 
       - name: Send webhook for deploy
-        run: "curl -s -S -f -X POST ${{ secrets.DEPLOYMENT_SERVER }} -H 'Authorization: ${{ secrets.DEPLOYMENT_TOKEN }}' -H 'Content-Type: application/json' -d '{\"owner\": \"${{ secrets.DOCKER_HUB_LOGIN }}\", \"repository\": \"${{ secrets.DOCKER_HUB_REPO }}\", \"tag\": \"${{ steps.get_tag.outputs.TAG }}\", \"ports\": {\"3000\": 8081}}'"
+        run: "curl -s -S -f -X POST ${{ secrets.DEPLOYMENT_SERVER }} -H 'Authorization: ${{ secrets.DEPLOYMENT_TOKEN }}' -H 'Content-Type: application/json' -d '{\"owner\": \"${{ secrets.DOCKER_HUB_LOGIN }}\", \"repository\": \"${{ secrets.DOCKER_HUB_REPO }}\", \"tag\": \"${{ steps.get_tag.outputs.TAG }}\", \"ports\": {\"app_port\": 3001, \"host_port\": 3001}}'"
